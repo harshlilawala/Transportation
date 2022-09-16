@@ -1,0 +1,835 @@
+$f-nav:#0000;
+$text-white:#fff;
+$home-color:#e21312;
+$text-white:#fff;
+$form-color:#cccccc;
+$text-dark:#000;
+$nav-color:#404041;
+$data-color:#646464;
+$footer:#7a7979;
+$base-pading:5px;
+$base-radius:2px;
+$font-weights:(
+    "regular":400,
+    "bold":600,
+    "bolder":bolder,
+);
+// /---------------------------font*-face------------------------
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&family=Nunito:ital,wght@0,200;0,400;1,300&family=Oswald:wght@200;300;400&family=Playfair+Display:ital,wght@1,700&family=Roboto+Flex:opsz,wght@8..144,400;8..144,600;8..144,800;8..144,900&family=Roboto:wght@100;300&display=swap');
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url("../../../fonts/Montserrat-Bold.ttf");
+    src: url("../../../fonts/Montserrat-Regular.ttf");
+    src: url("../../../fonts/Montserrat-ExtraBold.ttf");
+    src: url("../../../fonts/Montserrat-SemiBold.ttf");
+    src: url("../../../fonts/Montserrat-Medium.ttf");
+    src: url("../../../fonts/Montserrat-Bold.ttf");
+  }
+  @font-face{
+   font-family: lora;
+   src: url("../../../fonts/Lora-Italic-VariableFont_wght.ttf");
+   src: url("../../../fonts/Lora-VariableFont_wght.ttf");
+
+  }
+
+// -------------------------MIX-IN-----------------------------------------------
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+  }
+  @mixin for-lap-only {
+    @media (max-width: 1030px) { @content; }
+  }
+  @mixin for-tab-only {
+    @media (max-width: 850px) { @content; }
+  }
+
+  @mixin flexsb{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: center;
+}
+@mixin flexard{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: center;
+}
+@mixin flexend 
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: stretch;
+    }
+    
+
+ @mixin cent {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+// ----------------------common------------------
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+.white{
+    color: $text-white;
+}
+.black{
+    background-color: $text-dark;
+}
+.red{
+    background-color: $home-color;
+}
+.rcolor{
+    color: $home-color;
+}
+.bdr{
+    @include cent;
+}
+.bdr::after{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    border-bottom: 2px solid $home-color;
+    width: 145px;
+}
+// ---------------------------MAIN ------------------
+.f-nav{
+    &:after{
+        content:'';
+        position:absolute;
+        left:-53px;
+        top: 10px;
+        width: 373px;
+        height: 53px;
+        z-index: 1;
+        background: url('F:/Traning_toshal/Toshal_info/Tasks/Transportation Theme/new-theme/images/bg-image1.png');
+    }
+
+    padding: 10px 0px;
+    .buy{
+        .buypos{
+            .buyf{
+                font-size: 14px
+            }
+            @include flexard;
+            a{
+                transition: 0.5s;
+                text-decoration: none;
+                &:hover{
+                 
+                    color: $text-white;
+                    
+                        color: $home-color;
+                
+                }
+            }
+        }
+    }
+    .fonts{
+        @include flexend;
+        
+            .fa-brands, .fab {
+                transition: 0.5s;
+                padding-block: $base-pading;
+                font-size: 16px;
+               padding-right: $base-pading*3;
+                    &:hover{
+                        color: $home-color;
+                    }
+            }
+            .fa-solid, .fas {
+                transition: 0.5s;
+                padding-block: $base-pading;
+                &:hover{
+                    color: $home-color;
+                }
+            }
+    
+    }
+}
+.s-nav{
+   
+    .logow{
+        position: relative;
+        z-index: 2;
+        top: -10px;
+    }
+    .contact{
+        
+        p {
+            margin-top: 15px;
+            margin-bottom: 1rem;
+        }
+        .red{
+            padding: $base-pading*2;
+        }
+        .fa-solid, .fas {
+           font-size: 20px;
+           margin-right: $base-pading;
+        }
+
+        .seti{
+            @include cent;
+        }
+    }
+}
+.t-nav{
+    // .t-width{
+    //     max-width: 900px;
+    // }
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: white;
+        width: 75px;
+        height: 30px;
+        border-right: 25px solid #404041;
+        border-top: 40px solid #fff;
+    }
+    background-color: $nav-color;
+    .white{
+        &:hover{
+            color: $home-color;
+        }
+    }
+}
+.mimg{
+    .slick-slide img {
+        padding: 0px;
+        width: 100%;
+        height: 500px;
+    }
+    .slick-list {
+        height: 450px !important;
+        padding: 0 0px;
+    }
+    .slick-prev {
+        left: 3% ;
+        z-index: 999;
+    }
+    .slick-next {
+        right: 3%;
+    }
+    .slick-prev:before {
+        content: "\f053";
+    }
+    .slick-next:before {
+        content: "\f054";
+    }
+    [dir="rtl"] .slick-prev:before { 
+        content: "\f054";
+     }
+    
+    .slick-prev:before, .slick-next:before {
+        font-family: FontAwesome;
+        font-size: 50px !important;
+        line-height: 1;
+        opacity: .75;
+        padding: 5px;
+        background-color: transparent;
+        color: rgb(255, 255, 255) !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .slick-dotted.slick-slider {
+        margin-bottom: 0px;
+    }
+    .slick-dots li.slick-active button:before {
+        opacity: .75;
+        color: #ffffff;
+    }
+    .slick-dots li button {
+        font-size: 0;
+        line-height: 0;
+        display: block;
+        width: 0px;
+        height: 0px;
+        padding: 0px;
+        cursor: pointer;
+        color: white !important;
+        border: 0;
+        outline: none;
+        background: transparent !important;
+    }
+    .slick-dots {
+        position: absolute;
+        bottom: 5px;
+        display: block !important;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+    }
+    .slick-prev:before, .slick-next:before { 
+        font-family: FontAwesome;
+        font-size: 20px; 
+        line-height: 1;
+        color: rgb(0, 0, 0); opacity: 0.75; 
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        } 
+    .slick-dots li button:before {
+        font-family: FontAwesome;
+        font-size: 30px;
+        line-height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        content: '•';
+        text-align: center;
+        opacity: .25;
+        color: rgb(175, 175, 175);
+        background-color: transparent;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    // ----------------------------------------------------------
+    .cpos{
+     @include flexend;
+    }
+    .textpos {
+        position: absolute;
+        width: 800px;
+        top: 152px; 
+        text-align: end;
+        color: #fff;
+    }
+    .rbtn{
+        padding: 10px 20px;
+        background-color: $home-color;
+        color: $text-white;
+        text-decoration: none;
+        font-weight: bold;
+        border: 2px solid $home-color;
+        &:hover{
+            background-color: $text-white;
+            border: 2px solid $home-color;
+            color: #e21312;
+            cursor: pointer;
+        }
+         
+    }
+    .bdre::after{
+        content: "";
+        border-bottom: 3px solid $home-color;
+        position: absolute;
+        right: 0;
+        top: 45px;
+        width: 150px;
+    }
+}
+.choose{
+    
+   .bimg{
+        @include flexsb;
+        position: relative;
+    .logopos{
+        position: absolute;
+        top: 45px;
+        width: 100px;
+        height: 100px;
+    }
+        .symbol{
+            position: absolute;
+            top: 70px ;
+            margin-left:20px ;
+        }
+   }
+   .border-color {
+        border-color: #787879!important;
+    }
+    .col-md-11{
+        padding-right: 0px;
+        border-right: 5px solid $nav-color;
+    }
+   .content{
+        @include flexend;  
+        .datapos{
+            width: 75%;
+        } 
+   }
+}
+.company{
+    .about{
+        @include cent;  
+    } 
+    
+   .para{
+    color: $data-color;
+    margin-bottom: 35px;
+   }
+   .rbtn{
+    padding: 10px 20px;
+    background-color: $home-color;
+    color: $text-white;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid $home-color;
+    transition: 0.7s;
+    &:hover{
+        background-color: $text-white;
+        border: 2px solid $home-color;
+        color: #e21312;
+        cursor: pointer;
+    }
+ 
+    }
+    .imgfluid{
+        width: 100%;
+        height: auto;
+    }
+}
+.testomonials{
+    .highway{
+        background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0.733), rgba(252, 252, 252, 0.712)),
+        url('E:/Toshal_info/Tasks/Transportation Theme/new-theme/images/highway-370655_1920.png');
+        width: 100%;
+    }
+    .col-md-6{
+        position: relative;
+    }
+    .pink{
+
+        background-color: rgba(226,97,91,0.5);
+    }
+    .profile{
+        @include flexend;   
+    }
+    .whitepos {
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+        background-color: #fff;
+        position: absolute;
+        margin-right: 15px;
+        bottom: -10px;
+    }
+    .fs{
+        font-size: 11px;
+    }
+
+}
+.news{
+    p{
+        font-size: 13px;
+    }
+    .limg{
+    position: relative;
+    }
+    .overlay {
+        position: absolute; 
+        top: 0px;
+        cursor: pointer;
+        background: rgba(226,19,18,0.623); /* Black see-through */
+        width: 100%;
+        transition: .5s ease;
+        opacity:0;
+        height:100%;
+
+      }
+      .overlay:hover{
+        opacity: 0.5;
+      }
+
+    .may{
+        background-color: $home-color;
+    }
+    .newsdata{
+        .fonts{
+            @include flexsb;
+        .fontsize{
+            font-size: 10px;
+        }
+    }
+        
+        .rbtn{
+            padding: 10px 15px;
+            background-color: $home-color;
+            color: $text-white;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid $home-color;
+            transition: 0.7s;
+            &:hover{
+                background-color: $text-white;
+                border: 2px solid $home-color;
+                color: #e21312;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.mform{
+    background-color: $form-color;
+    .map-container{
+        height: 450px !important;
+    }
+    iframe {
+       width: 100%;
+       height: 400px;
+    }
+    .form-control {
+        margin-bottom: 35px;
+        background-color: $form-color;
+        border:1px solid #000000;
+    }
+    .btn {
+        color: $text-white;
+        border-radius: 20px;
+        font-size: 20px;
+        width: 100%;
+        transition: 0.5s;
+        background-color: #ff0000;
+            &:hover{
+               
+                background-color: $text-dark;
+            }
+        .fa-solid, .fas {
+            font-size: 25px;
+        }
+    }
+}
+.foot{
+    background-color: $text-dark;
+    .link{
+       .gcolor{
+        color: $footer;
+        transition: 0.5s;
+        // &:hover{
+        //     cursor: pointer;
+        //     color: $text-white;
+        // }
+       }
+       .fontpos{
+        @include flexard;
+       }
+       .fa-brands, .fab {
+        font-size: 20px;
+        background-color: $footer;
+        border: 3px solid $home-color;
+        color: $text-white ;
+        &:hover{
+            background-color: $text-white;
+            color: $text-dark;
+            font-size: 20px;
+        }
+
+    }
+    // .hov{
+    //     transition: 0.5s;
+    //     &:hover{
+    //         color: $text-white;
+    //     }
+    // }
+        .face{
+            padding: 10px 15px;
+               
+        }
+        .google{
+            padding: 10px;
+           
+        }
+    }
+    // --------------------------------------
+    .get{
+        .fa-solid, .fas {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 30px;
+        }
+    }
+
+    .add{
+        @include flexsb;
+    }
+    .fa-solid, .fas {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 20px;
+    }
+    .fsl{
+        font-size: 30px;
+    }
+    .set{
+        font-size: 17px;
+    }
+    .twit{
+        font-size: 30px;
+        color: $data-color !important;
+        background-color: transparent !important;
+        border: 0px solid $home-color !important;
+    }
+}
+// ------------------------------------------------
+.lastfoot{
+    .lr{
+        font-family: 'Lora', serif;
+        font-style: italic;
+    }
+    position: relative;
+    .upper{
+        @include flexend;
+        .rectangle {
+            height: 40px;
+            width: 40px;
+            background-color: #555;
+          }
+        .toparo{
+           
+            position: absolute;
+            padding: 10px;
+            background-color: $home-color;
+            top: -10px;
+            .fa-solid, .fas {
+                padding: 3px;
+                text-align: center;
+                border: 1px solid $text-white;
+                border-radius: 50px
+            }
+
+        }
+    }
+}
+
+
+// -------------------------------responsive-----------------------------
+// -------------------------------------1024-----------------------------
+@include for-lap-only{
+    .t-nav{
+       .home{
+        margin-left: 50px;
+       }
+    }
+}
+// ---------------------------------------768------------------------------
+@include for-tab-only{
+    .f-nav{
+        &:after{
+            content:'';
+            position:absolute;
+            left:-120px;
+            top: 10px;
+            width: 373px;
+            height: 64px;
+            z-index: 1;
+            background: url('../../../images/bg-image1.png');
+        }
+    }
+    .s-nav 
+    {
+       
+        .contact{
+            margin-top: $base-pading;
+            p{
+                font-size: 15px;
+            }
+        .seti{
+            @include cent;
+        }
+        
+            .red{
+                padding: 20px;
+                }
+            .fa-solid{
+            font-size: 20px;
+            margin-right: 0;
+            }
+        }
+    }
+    .mimg{
+        .textpos {
+            position: absolute;
+            width: 550px;
+            top: 152px; 
+            text-align: end;
+            color: #fff;
+        }
+    }
+    .choose{
+        .bimg{
+            .symbol{
+                top: 75px;
+                
+            } 
+        }
+    }
+    .testomonials{
+        .col-md-6{
+           margin-bottom: 20px;
+        }
+         .whitepos {
+            width: 50%;
+        }
+    }
+    .news{
+        p{
+            font-size: 10px;
+        }
+        .newsdata{
+            .fonts{
+                .fontsize{
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+    .brand{
+        .column{
+            @include cent;
+        }
+    }
+}
+    
+// -----------------------------------------------------------------------------------
+// ---------------------------------For Phone Only------------------------------
+// ---------------------------------------------------------------------------------
+@include for-phone-only{
+    .f-nav{
+        display: none;
+    }
+    .s-nav{
+       .logo{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+           .logow{
+                top:0;
+                margin: $base-pading;
+            }
+
+        }
+        .contact{
+            display: none;
+        }
+        
+    }
+    .t-nav{
+        &::before {
+           display: none
+        }
+        .home{
+            margin-left: 0%;
+        }
+    }
+    .mimg{
+        .slick-slide img {
+            padding: 0px;
+            width: 100%;
+            height: 330px;
+        }
+         .slick-prev:before,  .slick-next:before {
+            font-family: FontAwesome;
+            font-size: 20px !important;
+            line-height: 1;
+            opacity: 0.75;
+            padding: 5px;
+            background-color: transparent;
+            color: rgb(255, 255, 255) !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .slick-list {
+            height: 330px !important;
+            padding: 0 0px;
+        }
+        .bdre::after{
+            content: none  
+        }
+        .cpos{
+            @include cent;
+            .textpos{
+                text-align: center;
+                width: 100%;
+                top: 110px;
+            }
+            h1{
+                text-align: center;
+                font-size: 20px;
+                padding-bottom: $base-pading*4 !important;
+            }
+            p{
+                display: none;
+            }
+        }
+    }
+    .choose{
+         .bdr::after {
+            width: 100px;
+            margin-bottom: 15px;
+        }
+        .col-md-6{
+            margin-bottom: 15px;
+        }
+         .content {
+            .datapos {
+            width: 95%;
+            }
+         }
+        .bimg{
+        @include cent;
+        .logopos {
+            position: absolute;
+            top: -50px;
+        }
+       .symbol {
+          top: -25px;
+          margin-left: 0px;
+        }
+    }
+    }
+    .company{
+         .para {
+        margin-top: 10px;
+        color: #646464;
+        margin-bottom: 35px;
+            }
+        }
+        .testomonials{ .whitepos {
+            width: 60%;
+        }
+    }
+    .news{
+        .img-fluid {
+            width: 100% !important;
+            
+        }
+        p{
+            font-size: 13px;
+        }
+        .newsdata{
+            .fonts{
+                .fontsize{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .brand{
+        .column{
+            @include cent;
+        }
+    }
+    .lastfoot {.upper {.toparo {
+        position: absolute;
+        padding: 10px;
+        background-color: #e21312;
+        top: -25px;
+    }
+}
+    }
+}   
